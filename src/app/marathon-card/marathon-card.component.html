@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br><br>
+<!-- <h1></h1>
+<p class="Rdate"></p><br>
+<br><br><br>
+<hr> -->
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{marathon?.name}}</mat-card-title>
+    <mat-card-subtitle>{{marathon?.date | date:'short'}}</mat-card-subtitle>
+    <!-- <p>{{marathon?.video_url}}</p> -->
+    <ngb-rating ([rate])="3"></ngb-rating>
+  </mat-card-header>
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let image of marathonImg">
+      <i class="material-icons" style="margin-right: 20px">
+        keyboard_arrow_left
+      </i>
+      <img src="{{image}}">
+      <i class="material-icons" style="margin-left: 20px">
+        keyboard_arrow_right
+      </i>
+    </ng-template>
+  </ngb-carousel>
+  <mat-card-content>
+    <p>{{marathon?.description}}</p>
+  </mat-card-content>
+</mat-card>

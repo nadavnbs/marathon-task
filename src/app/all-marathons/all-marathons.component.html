@@ -1,0 +1,19 @@
+<app-header></app-header>
+<br>
+<br><br>
+<h1>Choose you'r Marathon</h1>
+<hr>
+<ul class="cards">
+  <li class="cards__item" *ngFor="let marathon of marathons; let i = index">
+    <div class="card">
+      <img class="card__image card__image--fence" src="{{marathon.images[0]}}">
+      <div class="card__content">
+        <div class="card__title">{{marathon.name}}</div>
+        <!-- <div class="date">
+          <p class="card__text"> {{marathon.date | date:'short'}}</p>
+        </div> -->
+        <button class="btn btn--block card__btn" (click)="getMarathon(marathon.id)">Let’s Run</button>
+      </div>
+    </div>
+  </li>
+</ul>
